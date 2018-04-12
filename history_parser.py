@@ -15,8 +15,8 @@ for loc in history["locations"]:
     "geometry": {
       "type": "Point",
       "coordinates": [
-        loc["latitudeE7"] / (10**7),
-        loc["longitudeE7"] / (10**7)
+        loc["longitudeE7"] / (10**7),
+        loc["latitudeE7"] / (10**7)
       ]
     },
     "properties": {
