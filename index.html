@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      var ten7 = 10^7;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: new google.maps.LatLng(39.94, -98.29),
+          mapTypeId: 'terrain'
+        });
+
+        map.data.loadGeoJson("history_features.json");
+
+        map.data.setStyle(function(feature) {
+          return {
+            icon: getCircle(3)
+          }
+        });
+
+
+      }
+
+      function getCircle(size) {
+        return {
+          path: google.maps.SymbolPath.CIRCLE,
+          fillColor: "red",
+          fillOpacity: .2,
+          scale: Math.pow(2, size) / 2,
+          strokeColor: "white",
+          strokeWeight: .5
+        };
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWK29fd4UKbRI8F76mXn-dO_Q4Wv5bY8&callback=initMap"></script>
+  </body>
+</html>
