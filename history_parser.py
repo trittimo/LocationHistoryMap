@@ -18,6 +18,9 @@ for loc in history["locations"]:
         loc["latitudeE7"] / (10**7),
         loc["longitudeE7"] / (10**7)
       ]
+    },
+    "properties": {
+      "name": "Point " + str(10 - limit)
     }
   })
 
