@@ -1,1 +1,2 @@
 *.json
+!history_features.json
